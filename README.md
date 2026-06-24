@@ -61,12 +61,6 @@ do `export STARSHIP_CONFIG=~/example/non/default/path/marathon.toml` or your reg
 
 If everything went correctly, the prompt should show after your next command.
 
----
-
-## Preview
-
-SOON
-
 --- 
 
 ## Customization
