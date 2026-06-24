@@ -1,0 +1,190 @@
+# Marathon theme, ported from https://github.com/valkyrieglasc/marathon-ohmyposh-config
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = """
+$os\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$nix_shell\
+$status\
+$line_break\
+$character"""
+
+right_format = "$direnv$dotnet$rust$nodejs$golang$python$time"
+
+palette = "marathon"
+[palettes.marathon]
+text = "#FFFFFF"
+background = "#000000"
+accent = "#C0FE04"
+danger = "#FF0055"
+vivid = "#C0FE04"
+on_vivid = "#000000"
+glow = "#C0FE04"
+
+[palettes.arachne]
+text = "#FFFFFF"
+background = "#000000"
+accent = "#B51124"
+danger = "#FF0055"
+vivid = "#C00411"
+on_vivid = "#000000"
+glow = "#B51124"
+
+[palettes.cyberacme]
+text = "#FFFFFF"
+background = "#000000"
+accent = "#C6EEED"
+danger = "#FF0055"
+vivid = "#0200F9"
+on_vivid = "#91E742"
+glow = "#00F5FF"
+
+[palettes.mida]
+text = "#FFFFFF"
+background = "#000000"
+accent = "#92E2E7"
+danger = "#FF0055"
+vivid = "#92E2E7"
+on_vivid = "#694A88"
+glow = "#92E2E7"
+
+[palettes.nucaloric]
+text = "#FFFFFF"
+background = "#000000"
+accent = "#fb1b74"
+danger = "#FF0055"
+vivid = "#fb1b74"
+on_vivid = "#000000"
+glow = "#fb1b74"
+
+[palettes.sekiguchi]
+text = "#FFFFFF"
+background = "#000000"
+accent = "#96F6C3"
+danger = "#FF0055"
+vivid = "#96F6C3"
+on_vivid = "#000000"
+glow = "#96F6C3"
+
+[palettes.traxus]
+text = "#FFFFFF"
+background = "#000000"
+accent = "#FF4A00"
+danger = "#FF0055"
+vivid = "#FF4A00"
+on_vivid = "#000000"
+glow = "#FF4A00"
+
+[os]
+disabled = false
+style = "fg:on_vivid bg:vivid"
+format = "[ \\[ $symbol \\] ]($style)"
+
+[os.symbols]
+Arch = "\uf303"
+Debian = "\uf306"
+Fedora = "\uf30a"
+Linux = "\uf17c"
+Macos = "\uf179"
+Manjaro = "\uf312"
+NixOS = "\ue843"
+openSUSE = "\uf314"
+Ubuntu = "\uf31b"
+Windows = "\uf17a"
+
+[username]
+show_always = false
+style_root = "fg:text bg:danger"
+style_user = "fg:text bg:danger"
+format = "[ \\[ ROOT \\] ]($style)"
+
+[directory]
+style = "fg:text bg:background"
+home_symbol = "~"
+truncation_length = 3
+truncation_symbol = "\u2026/"
+truncate_to_repo = true
+format = "[ \u2502   $path ]($style)"
+
+[git_branch]
+style = "fg:accent bg:background"
+symbol = "\ue0a0 "
+truncation_length = 15
+truncation_symbol = ""
+format = "[\u2502 SYNC : $symbol$branch]($style)"
+
+[git_status]
+style = "fg:accent bg:background"
+format = "[$ahead_behind]($style)([ \uF044 $modified$untracked$deleted$renamed]($style))([| \uF046 $staged$conflicted]($style))"
+ahead = " \u2191$count"
+behind = " \u2193$count"
+diverged = " \u2191$ahead_count\u2193$behind_count"
+modified = "~$count "
+untracked = "?$count "
+deleted = "\u2718$count "
+renamed = "\u00bb$count "
+staged = "+$count "
+conflicted = "=$count "
+
+[status]
+disabled = false
+style = "fg:danger bg:background"
+format = "[ \u2502 \u2593\u2593 ERR: $status ]($style)"
+
+[nix_shell]
+style = "fg:accent bg:background"
+symbol = " "
+format = "[\u2502 \U000F09BA\uf299 $name]($style)"
+
+[direnv]
+disabled = false
+style = "fg:accent bg:background"
+loaded_msg = "loaded"
+not_allowed_msg = "not allowed"
+allowed_msg = "allowed"
+denied_msg = "denied"
+unloaded_msg = "unloaded"
+format = "[\\[$symbol$loaded/$allowed\\]]($style)"
+symbol = "\u27e5 " # \uf4b7 is also pretty nice (container)
+
+[dotnet]
+style = "fg:accent bg:background"
+format = "[\\[$symbol$version\\]]($style)"
+detect_extensions = [ "csproj", "sln", "slnx" ]
+symbol = "\ued04"
+
+[rust]
+style = "fg:accent bg:background"
+format = "[\\[ $symbol \\]]($style)"
+symbol = "\ue7a8"
+
+[nodejs]
+style = "fg:accent bg:background"
+format = "[\\[ $symbol \\]]($style)"
+symbol = "\ue718"
+
+[golang]
+style = "fg:accent bg:background"
+format = "[\\[ $symbol \\]]($style)"
+symbol = "\ue626"
+
+[python]
+style = "fg:accent bg:background"
+format = "[\\[ $symbol \\]]($style)"
+symbol = "\ue235"
+
+[time]
+disabled = false
+style = "fg:accent bg:background"
+time_format = "%H:%M"
+format = "[\\[$time\\]]($style)"
+
+[character]
+success_symbol = "[\u27a4](glow)"
+error_symbol = "[\u27a4](danger)"
+vimcmd_symbol = "[\u27a4](glow)"
