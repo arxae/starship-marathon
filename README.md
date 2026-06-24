@@ -1,8 +1,6 @@
-<div align="center">
 # Marathon Starship Theme
 A Starship configuration inspired by **Marathon** by Bungie.
 <img width="473" height="52" alt="image" src="https://github.com/user-attachments/assets/dae01508-863c-4e0d-af0b-ffde5954e262" />
-</div>
 
 ---
 
